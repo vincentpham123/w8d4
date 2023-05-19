@@ -7,14 +7,16 @@ function sum(...num) {
 }
 
 function sum2() {
-    let args = Array.prototype.slice.call(arguments);
+    // let args = Array.prototype.slice.call(arguments);
+    let args = Array.from(arguments);
     const answer = args.reduce((acc,currentValue)=>{
          return acc + currentValue;
     });
     return answer;
 }
 
-// console.log(sum2(1,2,3,4,5));
+console.log(sum2(1,2,3,4,5));
+
 Function.prototype.myBind1 = function(context,...initalArgs){
 
     const originalFunction = this;
